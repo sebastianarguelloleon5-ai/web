@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LogicWeb Studio · Sistemas a la medida para tu negocio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--bg:#EEF2EF;--surface:#FFFFFF;--ink:#14231C;--muted:#4C5D54;--line:#C9D4CD;--green:#1F5A3C;--sun:#F2B705;--on-green:#FFFFFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A14;--surface:#16251D;--ink:#EAF1EC;--muted:#A3B5AA;--line:#2B3F33;--green:#6FCB9A;--on-green:#0F1A14}}
+:root[data-theme="dark"]{--bg:#0F1A14;--surface:#16251D;--ink:#EAF1EC;--muted:#A3B5AA;--line:#2B3F33;--green:#6FCB9A;--on-green:#0F1A14}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;max-width:20ch}
+.lead{color:var(--muted);max-width:56ch;margin:.9rem 0 0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+.btn{display:inline-block;background:var(--green);color:var(--on-green);font-weight:600;padding:.85rem 1.4rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:3rem 0 4rem}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);font-weight:800}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:1.2rem 0 1.8rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.ticket{background:var(--surface);border:1px solid var(--line);padding:1.5rem 1.4rem 1.8rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem;position:relative;
+-webkit-mask:radial-gradient(circle 7px at 7px 100%,#0000 98%,#000) bottom/14px 100% repeat-x;mask:radial-gradient(circle 7px at 7px 100%,#0000 98%,#000) bottom/14px 100% repeat-x;transform:rotate(1.5deg)}
+.ticket h3{font-size:1.1rem;margin-bottom:.2rem}
+.ticket small{color:var(--muted);display:block;margin-bottom:1rem}
+.ticket label{display:block;margin:.7rem 0 .25rem;color:var(--muted);font-size:.85rem}
+.ticket select,.ticket input{width:100%;font:inherit;padding:.55rem;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px}
+.ticket .row{display:flex;justify-content:space-between;border-top:2px dashed var(--line);margin-top:1.1rem;padding-top:.9rem;font-weight:700;font-size:1.25rem}
+.ticket .ok{margin-top:.8rem;font-size:.85rem;color:var(--green)}
+/* proyectos */
+.proj{margin-top:2.5rem;border-top:1px solid var(--line)}
+.p{display:grid;grid-template-columns:200px 1fr 1fr;gap:1.5rem 2.5rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+.p h3{font-size:1.5rem}
+.p .tag{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.p b{display:block;font-size:.95rem;margin-bottom:.25rem}
+.p ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.p li{margin:.2rem 0}
+.p .pain{border-left:4px solid var(--sun);padding-left:1rem}
+/* pasos */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;counter-reset:s}
+.steps div{border-top:4px solid var(--green);padding-top:1rem;counter-increment:s}
+.steps h3{font-size:1.3rem}
+.steps h3::before{content:counter(s) ". "}
+.steps p{color:var(--muted);margin:.5rem 0 0}
+/* precios */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.price.main{border:2px solid var(--green)}
+.price h3{font-size:1.2rem}
+.price .n{font:800 2.2rem "Bricolage Grotesque",sans-serif;margin:.6rem 0 .2rem}
+.price p{color:var(--muted);margin:0;font-size:.95rem}
+.note{margin-top:1.5rem;color:var(--muted);max-width:70ch}
+/* cierre */
+.close{background:var(--green);color:var(--on-green);border-radius:20px;padding:3rem 2rem;text-align:center}
+.close h2{margin:0 auto;max-width:18ch}
+.close p{margin:1rem auto 1.6rem;max-width:46ch;opacity:.9}
+.close .btn{background:var(--sun);color:#14231C}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));background:#25D366;color:#0B2A17;font-weight:700;padding:.8rem 1.2rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:5}
+@media (max-width:860px){
+.hero,.p,.steps,.prices{grid-template-columns:1fr}
+.hero{padding-top:1rem}.ticket{transform:none}section{padding:3.2rem 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">LogicWeb Studio</a><a class="btn ghost" href="#contacto" style="padding:.55rem 1.1rem">Escríbenos</a></nav>
+
+<header class="hero">
+  <div>
+    <h1>Tu negocio o tu finca, en un sistema hecho a tu medida.</h1>
+    <p>Programamos puntos de venta, tiendas en línea y sistemas de control para comercios y fincas de Costa Rica. Funcionan desde el celular y se pagan una sola vez.</p>
+    <div class="cta"><a class="btn" href="#contacto" data-wa="Hola, quiero ver una demo de un sistema para mi negocio.">Pedir una demo</a><a class="btn ghost" href="#proyectos">Ver proyectos</a></div>
+  </div>
+  <div class="ticket" aria-label="Demo de caja rápida">
+    <h3>Mi Tienda Local</h3><small>Prueba la caja: así calcula el sistema</small>
+    <label for="prod">Producto</label>
+    <select id="prod"><option value="15000">Audífonos Bluetooth</option><option value="5000">Cable USB tipo C</option><option value="10000">Cargador rápido</option></select>
+    <label for="qty">Cantidad</label>
+    <input id="qty" type="number" min="1" max="10" value="1">
+    <div class="row"><span>Total</span><span id="tot">₡15,000</span></div>
+    <div class="ok">Recibo listo para enviar por WhatsApp</div>
+  </div>
+</header>
+</div>
+
+<section id="proyectos"><div class="wrap">
+  <h2>Sistemas que ya están funcionando</h2>
+  <p class="lead">Cada proyecto nace de un problema real del día a día. Los adaptamos con tu logo, tus colores y tus precios.</p>
+  <div class="proj">
+    <article class="p">
+      <div><h3>Minici Store</h3><div class="tag">Punto de venta</div></div>
+      <div class="pain"><b>El problema</b>Cuentas en cuaderno, la caja no cuadra y las filas se hacen largas.</div>
+      <div><b>Lo que hace</b><ul><li>Caja con recibos automáticos por WhatsApp</li><li>Inventario al día y control de productos</li><li>Reportes a Excel con un clic</li><li>Respaldos automáticos en la nube</li></ul></div>
+    </article>
+    <article class="p">
+      <div><h3>ERP Granja Caprina</h3><div class="tag">Lechería de cabras</div></div>
+      <div class="pain"><b>El problema</b>Se olvidan los celos, los partos y el secado, y una mastitis se nota tarde.</div>
+      <div><b>Lo que hace</b><ul><li>Alertas de celo, parto probable y secado</li><li>Producción diaria por cabra y aviso si cae más de 20 %</li><li>Retiro de leche tras cada medicamento</li><li>Inventario de alimento, lácteos y finanzas en colones</li></ul></div>
+    </article>
+    <article class="p">
+      <div><h3>Control de Finca</h3><div class="tag">Registro de ganado</div></div>
+      <div class="pain"><b>El problema</b>El historial de cada animal vive en la memoria o en libretas.</div>
+      <div><b>Lo que hace</b><ul><li>Ficha por animal con madre, padre y edad</li><li>Registro de partos y crías</li><li>Búsqueda rápida por arete, nombre o raza</li><li>Exportación a Excel y CSV</li></ul></div>
+    </article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Así trabajamos</h2>
+  <div class="steps">
+    <div><h3>Demo</h3><p>Nos cuentas qué necesitas y te mostramos un sistema funcionando. Sin compromiso.</p></div>
+    <div><h3>Adaptación</h3><p>Partimos de código ya probado y lo personalizamos con tu logo, colores y precios.</p></div>
+    <div><h3>Entrega</h3><p>Lo dejamos en la nube, listo para usar desde el celular o la computadora. Entrega en 3 a 7 días hábiles.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Precios claros, pago único</h2>
+  <div class="prices">
+    <div class="price"><h3>Página corporativa</h3><div class="n">₡50,000</div><p>Tu negocio en línea, con botón directo a WhatsApp.</p></div>
+    <div class="price"><h3>Tienda en línea</h3><div class="n">₡80,000</div><p>Catálogo con carrito. Los pedidos te llegan ordenados por WhatsApp.</p></div>
+    <div class="price main"><h3>Sistema a la medida</h3><div class="n">₡100,000</div><p>Punto de venta o control de finca, con reportes en Excel.</p></div>
+  </div>
+  <p class="note">Cada módulo extra cuesta ₡5,000. El hosting y soporte mensual es opcional: ₡15,000 al mes. El pago se coordina por transferencia o SINPE Móvil.</p>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <div class="close">
+    <h2>Cuéntanos qué necesita tu negocio</h2>
+    <p>Escríbenos por WhatsApp y te respondemos con una demo y una cotización.</p>
+    <a class="btn" href="#" data-wa="Hola, vengo de su sitio web y quiero más información.">Escribir por WhatsApp</a>
+  </div>
+  <footer>© LogicWeb Studio · Costa Rica</footer>
+</div></section>
+
+<a class="wa" href="#" data-wa="Hola, vengo de su sitio web y quiero más información.">WhatsApp</a>
+
+<script>
+var WA="50686084702";
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(a.dataset.wa);
+  a.target="_blank";a.rel="noopener";
+});
+var p=document.getElementById("prod"),q=document.getElementById("qty"),t=document.getElementById("tot");
+function calc(){var n=Math.min(10,Math.max(1,parseInt(q.value)||1));t.textContent="₡"+(n*parseInt(p.value)).toLocaleString("en-US")}
+p.addEventListener("change",calc);q.addEventListener("input",calc);
+</script>
+</body>
+</html>
