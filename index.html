@@ -4,192 +4,256 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LogicWeb Studio · Sistemas a la medida para tu negocio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<meta name="description" content="Puntos de venta, tiendas en línea y sistemas de control para comercios y fincas de Costa Rica. Pago único y funcionan desde el celular.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Source+Sans+3:wght@400;600&display=swap">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-:root{--bg:#EEF2EF;--surface:#FFFFFF;--ink:#14231C;--muted:#4C5D54;--line:#C9D4CD;--green:#1F5A3C;--sun:#F2B705;--on-green:#FFFFFF;
+:root{--bg:#F3F6F3;--bg2:#E7EEE9;--surface:#FFFFFF;--ink:#0B1712;--muted:#485B51;--line:#D0DCD4;--accent:#E39A00;--green:#0F7A4F;--on:#FFFFFF;--g1:rgba(18,185,129,.25);--g2:rgba(227,154,0,.22);--sh:0 24px 60px -20px rgba(11,23,18,.25);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A14;--surface:#16251D;--ink:#EAF1EC;--muted:#A3B5AA;--line:#2B3F33;--green:#6FCB9A;--on-green:#0F1A14}}
-:root[data-theme="dark"]{--bg:#0F1A14;--surface:#16251D;--ink:#EAF1EC;--muted:#A3B5AA;--line:#2B3F33;--green:#6FCB9A;--on-green:#0F1A14}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06100B;--bg2:#0A1710;--surface:#0F1D16;--ink:#EDF5EF;--muted:#9AB0A2;--line:#1F3328;--accent:#FFB938;--green:#4ADE9A;--on:#04110A;--g1:rgba(52,211,153,.22);--g2:rgba(255,185,56,.15);--sh:0 30px 70px -25px rgba(0,0,0,.8)}}
+:root[data-theme="dark"]{--bg:#06100B;--bg2:#0A1710;--surface:#0F1D16;--ink:#EDF5EF;--muted:#9AB0A2;--line:#1F3328;--accent:#FFB938;--green:#4ADE9A;--on:#04110A;--g1:rgba(52,211,153,.22);--g2:rgba(255,185,56,.15);--sh:0 30px 70px -25px rgba(0,0,0,.8)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem);scroll-behavior:smooth;height:auto}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Source Sans 3",system-ui,sans-serif}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08;margin:0;letter-spacing:-.02em}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-spacing:-.03em;line-height:1.02}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-section{padding:4.5rem 0}
-h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;max-width:20ch}
-.lead{color:var(--muted);max-width:56ch;margin:.9rem 0 0}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
-.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none}
-.btn{display:inline-block;background:var(--green);color:var(--on-green);font-weight:600;padding:.85rem 1.4rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
-.btn:hover{filter:brightness(1.1)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+section{padding:6rem 0;position:relative}
+.eye{display:inline-block;font:600 .8rem "Source Sans 3",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;max-width:16ch}
+.lead{color:var(--muted);font-size:1.15rem;max-width:54ch;margin:1.1rem 0 0}
+.g{background:linear-gradient(100deg,var(--green),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:4rem}
+.logo{display:flex;align-items:center;gap:.6rem;font:800 1.2rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--green),var(--accent));display:grid;place-items:center;font-style:normal;font-size:1rem;color:#06100B}
+.links{display:flex;gap:1.6rem;align-items:center}.links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--green);color:var(--on);font:600 1rem "Source Sans 3",sans-serif;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 10px 30px -8px var(--g1),0 0 0 1px color-mix(in srgb,var(--green) 60%,transparent);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.am{background:var(--accent);color:#1A1200;box-shadow:0 10px 30px -8px var(--g2)}
+.btn.gh{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.sm{padding:.55rem 1.1rem;font-size:.92rem}
 /* hero */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:3rem 0 4rem}
-.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);font-weight:800}
-.hero p{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:1.2rem 0 1.8rem}
+.hero{padding:4.5rem 0 5rem;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:dr 14s ease-in-out infinite alternate}
+.hero::before{width:520px;height:520px;background:var(--g1);top:-120px;right:-100px}
+.hero::after{width:420px;height:420px;background:var(--g2);bottom:-120px;left:-120px;animation-delay:-6s}
+@keyframes dr{to{transform:translate(40px,30px) scale(1.12)}}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.9rem,7vw,5.4rem);font-weight:800}
+.hero p.s{font-size:1.25rem;color:var(--muted);max-width:46ch;margin:1.4rem 0 2rem}
 .cta{display:flex;gap:.8rem;flex-wrap:wrap}
-.ticket{background:var(--surface);border:1px solid var(--line);padding:1.5rem 1.4rem 1.8rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem;position:relative;
--webkit-mask:radial-gradient(circle 7px at 7px 100%,#0000 98%,#000) bottom/14px 100% repeat-x;mask:radial-gradient(circle 7px at 7px 100%,#0000 98%,#000) bottom/14px 100% repeat-x;transform:rotate(1.5deg)}
-.ticket h3{font-size:1.1rem;margin-bottom:.2rem}
-.ticket small{color:var(--muted);display:block;margin-bottom:1rem}
-.ticket label{display:block;margin:.7rem 0 .25rem;color:var(--muted);font-size:.85rem}
-.ticket select,.ticket input{width:100%;font:inherit;padding:.55rem;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px}
-.ticket .row{display:flex;justify-content:space-between;border-top:2px dashed var(--line);margin-top:1.1rem;padding-top:.9rem;font-weight:700;font-size:1.25rem}
-.ticket .ok{margin-top:.8rem;font-size:.85rem;color:var(--green)}
+.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+.chips span{font-size:.88rem;font-weight:600;padding:.4rem .85rem;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 70%,transparent);color:var(--muted)}
+.stage{position:relative;padding:1.5rem 0 2.5rem}
+.ticket{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.6rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.93rem;box-shadow:var(--sh);transform:rotate(-1.5deg);animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:rotate(-1.5deg) translateY(-10px)}}
+.ticket h3{font-size:1.15rem;font-family:"Bricolage Grotesque",sans-serif}.ticket small{display:block;color:var(--muted);margin:.2rem 0 .8rem}
+.ticket label{display:block;margin:.7rem 0 .25rem;color:var(--muted);font-size:.82rem}
+.ticket select,.ticket input,.quote select{width:100%;font:inherit;padding:.6rem .7rem;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px}
+.tot{display:flex;justify-content:space-between;border-top:2px dashed var(--line);margin-top:1.1rem;padding-top:.9rem;font:800 1.5rem "Bricolage Grotesque",sans-serif}
+.fl{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.65rem .9rem;font-size:.85rem;font-weight:600;box-shadow:var(--sh);display:flex;gap:.5rem;align-items:center;animation:fl2 7s ease-in-out infinite}
+.fl b{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--g1);font-size:.85rem}
+.fl.a{right:-.5rem;top:0}.fl.b{left:-1.2rem;bottom:0;animation-delay:-3s}
+@keyframes fl2{50%{transform:translateY(-9px)}}
+.stats{border-block:1px solid var(--line);background:var(--bg2);padding:1.6rem 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center}
+.stats b{display:block;font:800 1.9rem "Bricolage Grotesque",sans-serif}.stats span{color:var(--muted);font-size:.95rem}
 /* proyectos */
-.proj{margin-top:2.5rem;border-top:1px solid var(--line)}
-.p{display:grid;grid-template-columns:200px 1fr 1fr;gap:1.5rem 2.5rem;padding:2rem 0;border-bottom:1px solid var(--line)}
-.p h3{font-size:1.5rem}
-.p .tag{color:var(--muted);font-size:.95rem;margin-top:.4rem}
-.p b{display:block;font-size:.95rem;margin-bottom:.25rem}
-.p ul{margin:0;padding-left:1.1rem;color:var(--muted)}
-.p li{margin:.2rem 0}
-.p .pain{border-left:4px solid var(--sun);padding-left:1rem}
-.p{grid-template-columns:1fr 1fr;align-items:center;padding:2.5rem 0}
-.p:nth-child(even) .mock{order:2}
-.p .txt h3{font-size:1.7rem}
-.p .txt>p{color:var(--muted);margin:.5rem 0 1rem}
-.p .pain{margin-bottom:1rem}
-.mock{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.85rem;box-shadow:0 14px 34px rgba(0,0,0,.14)}
-.mock .top{display:flex;align-items:center;gap:6px;padding:.55rem .8rem;border-bottom:1px solid var(--line);color:var(--muted);font-size:.78rem}
-.mock .top i{width:9px;height:9px;border-radius:50%;background:var(--line)}
-.mock .top span{margin-left:auto}
-.mock .bd{padding:1rem;position:relative}
-.r{display:flex;justify-content:space-between;gap:.6rem;padding:.4rem 0;border-bottom:1px dashed var(--line)}
-.r.tot{font-weight:700;font-size:1rem;border-bottom:0}
+.pj{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center;margin-top:5rem;position:relative}
+.pj:nth-of-type(even) .mock{order:2}
+.pj .n{font:800 5rem "Bricolage Grotesque",sans-serif;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line)}
+.pj h3{font-size:clamp(1.8rem,3.4vw,2.5rem);margin:.4rem 0 .6rem}
+.pj p{color:var(--muted);margin:0 0 1.2rem}
+.pn{border-left:3px solid var(--accent);padding:.1rem 0 .1rem 1rem;margin-bottom:1.2rem}.pn b{display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.pj ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.pj li{padding-left:1.7rem;position:relative}.pj li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.mock{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);overflow:hidden;font-size:.86rem;position:relative}
+.mock::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(140deg,var(--green),transparent 40%,var(--accent));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;pointer-events:none}
+.top{display:flex;align-items:center;gap:6px;padding:.7rem .9rem;border-bottom:1px solid var(--line);color:var(--muted);font-size:.78rem;background:var(--bg2)}
+.top i{width:10px;height:10px;border-radius:50%;background:var(--line)}.top span{margin-left:auto}
+.bd{padding:1.1rem}
+.r{display:flex;justify-content:space-between;gap:.6rem;padding:.45rem 0;border-bottom:1px dashed var(--line)}
+.r.t{font-weight:700;font-size:1.05rem;border:0}
+.al{background:var(--bg);border-left:4px solid var(--accent);padding:.5rem .7rem;margin:.4rem 0;border-radius:0 8px 8px 0}
 .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:.8rem}
-.kp div{background:var(--bg);border-radius:8px;padding:.5rem .6rem}
-.kp b{display:block;font-size:1.15rem}.kp small{color:var(--muted)}
-.al{background:var(--bg);border-left:4px solid var(--sun);padding:.4rem .6rem;margin:.35rem 0;border-radius:0 6px 6px 0}
-.bars{display:flex;align-items:flex-end;gap:5px;height:64px;margin:.6rem 0}
-.bars i{flex:1;background:var(--green);border-radius:3px 3px 0 0}
+.kp div{background:var(--bg);border-radius:10px;padding:.6rem}.kp b{display:block;font:800 1.3rem "Bricolage Grotesque",sans-serif}.kp small{color:var(--muted)}
+.mock svg{display:block;width:100%;height:70px;margin:.6rem 0}
 .blur{filter:blur(5px);user-select:none;pointer-events:none}
-.lk{margin-top:.7rem;position:relative}
-.lk em{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:.8rem;text-align:center}
-.lk em span{background:var(--surface);border:1px solid var(--line);padding:.3rem .7rem;border-radius:999px}
-.mock .fn{margin:0;padding:.55rem 1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.75rem}
+.lk{position:relative;margin-top:.7rem}
+.lk em{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:.8rem}
+.lk em span{background:var(--surface);border:1px solid var(--line);padding:.35rem .8rem;border-radius:999px;box-shadow:var(--sh)}
+.fn{margin:0;padding:.6rem 1.1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.74rem}
 /* pasos */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;counter-reset:s}
-.steps div{border-top:4px solid var(--green);padding-top:1rem;counter-increment:s}
-.steps h3{font-size:1.3rem}
-.steps h3::before{content:counter(s) ". "}
-.steps p{color:var(--muted);margin:.5rem 0 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.8rem;position:relative;overflow:hidden}
+.st::after{content:attr(data-n);position:absolute;right:1rem;top:-.6rem;font:800 6rem "Bricolage Grotesque",sans-serif;color:var(--g1)}
+.st h3{font-size:1.5rem;margin-bottom:.6rem;position:relative}.st p{margin:0;color:var(--muted);position:relative}
 /* precios */
-.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.25rem;margin-top:2.5rem}
-.price{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
-.price.main{border:2px solid var(--green)}
-.price h3{font-size:1.2rem}
-.price .n{font:800 2.2rem "Bricolage Grotesque",sans-serif;margin:.6rem 0 .2rem}
-.price p{color:var(--muted);margin:0;font-size:.95rem}
-.note{margin-top:1.5rem;color:var(--muted);max-width:70ch}
-/* cierre */
-.close{background:var(--green);color:var(--on-green);border-radius:20px;padding:3rem 2rem;text-align:center}
-.close h2{margin:0 auto;max-width:18ch}
-.close p{margin:1rem auto 1.6rem;max-width:46ch;opacity:.9}
-.close .btn{background:var(--sun);color:#14231C}
-footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
-.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));background:#25D366;color:#0B2A17;font-weight:700;padding:.8rem 1.2rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:5}
-@media (max-width:860px){
-.hero,.p,.steps,.prices{grid-template-columns:1fr}.p:nth-child(even) .mock{order:0}
-.hero{padding-top:1rem}.ticket{transform:none}section{padding:3.2rem 0}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
+.pr{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;transition:transform .25s}
+.pr:hover{transform:translateY(-5px)}
+.pr h3{font-size:1.15rem}.pr .v{font:800 2rem "Bricolage Grotesque",sans-serif;margin:.8rem 0 .4rem;letter-spacing:-.03em}.pr p{margin:0;color:var(--muted);font-size:.94rem}
+.pr.f{background:linear-gradient(160deg,color-mix(in srgb,var(--green) 22%,var(--surface)),var(--surface));border-color:var(--green)}
+.pr.f::before{content:"Más completo";align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#1A1200;padding:.2rem .6rem;border-radius:999px;margin-bottom:.8rem}
+.note{color:var(--muted);margin:1.2rem 0 0;max-width:72ch}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:var(--sh)}
+.qf label{display:block;margin:1rem 0 .35rem;font-weight:600}.qf label:first-child{margin-top:0}
+.qf input[type=range]{width:100%;accent-color:var(--green)}.qf .chk{display:flex;gap:.6rem;align-items:center;font-weight:400}
+.qr{text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.5rem;background:var(--bg2);border-radius:18px;padding:1.5rem}
+.qn{font:800 clamp(2.6rem,6vw,3.6rem) "Bricolage Grotesque",sans-serif;line-height:1.05}
+.faq{max-width:780px;margin-top:2.5rem;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:1.2rem 0}
+.faq summary{cursor:pointer;font:600 1.15rem "Source Sans 3",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.5rem;line-height:1}.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin:.8rem 0 0}
+.close{text-align:center;border-radius:32px;padding:5rem 1.5rem;background:radial-gradient(circle at 20% 0,var(--g1),transparent 55%),radial-gradient(circle at 90% 100%,var(--g2),transparent 55%),var(--surface);border:1px solid var(--line);overflow:hidden}
+.close h2{margin:0 auto;max-width:15ch}.close p{margin:1.2rem auto 2rem;max-width:46ch;color:var(--muted);font-size:1.15rem}
+footer{padding:2rem 0 4rem;color:var(--muted);font-size:.9rem;text-align:center}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));background:#25D366;color:#06210F;font-weight:700;padding:.85rem 1.3rem;border-radius:999px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:35}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.js .rv.in{opacity:1;transform:none}
+@media (max-width:900px){.hg,.pj,.quote,.steps{grid-template-columns:1fr}.pj:nth-of-type(even) .mock{order:0}.links a:not(.btn){display:none}section{padding:4rem 0}.fl.b{left:0}.fl.a{right:0}.stats .wrap{grid-template-columns:1fr}.pj{gap:2rem;margin-top:3.5rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav><a class="logo" href="#">LogicWeb Studio</a><a class="btn ghost" href="#contacto" style="padding:.55rem 1.1rem">Escríbenos</a></nav>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#"><i>⚡</i>LogicWeb Studio</a>
+  <nav class="links"><a href="#proyectos">Proyectos</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a><a class="btn sm" href="#" data-wa="Hola, quiero ver una demo de un sistema para mi negocio.">Pedir demo</a></nav>
+</div></header>
 
-<header class="hero">
+<section class="hero"><div class="wrap hg">
   <div>
-    <h1>Tu negocio o tu finca, en un sistema hecho a tu medida.</h1>
-    <p>Programamos puntos de venta, tiendas en línea y sistemas de control para comercios y fincas de Costa Rica. Funcionan desde el celular y se pagan una sola vez.</p>
-    <div class="cta"><a class="btn" href="#contacto" data-wa="Hola, quiero ver una demo de un sistema para mi negocio.">Pedir una demo</a><a class="btn ghost" href="#proyectos">Ver proyectos</a></div>
+    <span class="eye">Software a la medida · Costa Rica</span>
+    <h1>Un sistema hecho para tu <span class="g">negocio o tu finca.</span></h1>
+    <p class="s">Puntos de venta, tiendas en línea y control de ganado que funcionan desde tu celular. Los pagas una vez y son tuyos.</p>
+    <div class="cta"><a class="btn am" href="#" data-wa="Hola, quiero ver una demo de un sistema para mi negocio.">Pedir una demo gratis</a><a class="btn gh" href="#proyectos">Ver proyectos</a></div>
+    <div class="chips"><span>Pago único</span><span>Desde el celular</span><span>Entrega en 3 a 7 días</span></div>
   </div>
-  <div class="ticket" aria-label="Demo de caja rápida">
-    <h3>Mi Tienda Local</h3><small>Prueba la caja: así calcula el sistema</small>
-    <label for="prod">Producto</label>
-    <select id="prod"><option value="15000">Audífonos Bluetooth</option><option value="5000">Cable USB tipo C</option><option value="10000">Cargador rápido</option></select>
-    <label for="qty">Cantidad</label>
-    <input id="qty" type="number" min="1" max="10" value="1">
-    <div class="row"><span>Total</span><span id="tot">₡15,000</span></div>
-    <div class="ok">Recibo listo para enviar por WhatsApp</div>
+  <div class="stage">
+    <div class="ticket" aria-label="Demo de caja rápida">
+      <h3>Mi Tienda Local</h3><small>Prueba la caja, calcula en vivo</small>
+      <label for="prod">Producto</label>
+      <select id="prod"><option value="15000">Audífonos Bluetooth</option><option value="5000">Cable USB tipo C</option><option value="10000">Cargador rápido</option></select>
+      <label for="qty">Cantidad</label><input id="qty" type="number" min="1" max="10" value="1">
+      <div class="tot"><span>Total</span><span id="tot">₡15,000</span></div>
+    </div>
+    <div class="fl a"><b>✓</b>Recibo enviado por WhatsApp</div>
+    <div class="fl b"><b>🐐</b>Cabra 014: parto en 6 días</div>
   </div>
-</header>
-</div>
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <div><b>3</b><span>sistemas ya funcionando</span></div>
+  <div><b>3 a 7 días</b><span>de la demo a la entrega</span></div>
+  <div><b>₡0</b><span>de mensualidad obligatoria</span></div>
+</div></div>
 
 <section id="proyectos"><div class="wrap">
-  <h2>Mira cómo se ven por dentro</h2>
-  <p class="lead">Estas son vistas parciales de sistemas que ya están funcionando, con datos de ejemplo. Te mostramos lo esencial y el resto lo ves en una demo.</p>
-  <div class="proj">
-    <article class="p">
-      <div class="mock"><div class="top"><i></i><i></i><i></i><span>Minici Store · Caja</span></div><div class="bd">
-        <div class="r"><span>Cable USB tipo C × 2</span><span>₡10,000</span></div>
-        <div class="r"><span>Cargador rápido × 1</span><span>₡10,000</span></div>
-        <div class="r"><span>Audífonos Bluetooth × 1</span><span>₡15,000</span></div>
-        <div class="r tot"><span>Total</span><span>₡35,000</span></div>
-        <div class="al">Recibo listo para enviar por WhatsApp</div>
-        <div class="lk"><div class="blur"><div class="r"><span>Ventas de hoy</span><span>₡184,500</span></div><div class="r"><span>Abonos recibidos</span><span>₡42,000</span></div><div class="r"><span>Productos por agotarse</span><span>7</span></div></div><em><span>🔒 Reportes y cierre de caja en la demo</span></em></div>
-      </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
-      <div class="txt"><h3>Minici Store</h3><p>Punto de venta con inventario, clientes, abonos y apartados.</p>
-        <div class="pain"><b>El problema</b>Cuentas en cuaderno, la caja no cuadra y las filas se hacen largas.</div>
-        <ul><li>Comprobantes en imagen y tiquete para impresora de rollo</li><li>Lector de códigos de barras</li><li>Reportes a Excel con un clic y respaldos en la nube</li></ul></div>
-    </article>
-    <article class="p">
-      <div class="mock"><div class="top"><i></i><i></i><i></i><span>Granja Caprina · Resumen</span></div><div class="bd">
-        <div class="kp"><div><b>42</b><small>En lactancia</small></div><div><b>61 L</b><small>Leche hoy</small></div><div><b>3</b><small>Alertas</small></div></div>
-        <div class="al">Cabra 014: parto probable en 6 días</div>
-        <div class="al">Cabra 027: producción cayó 24 %, revisar mastitis</div>
-        <div class="bars" aria-hidden="true"><i style="height:55%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:66%"></i><i style="height:74%"></i><i style="height:80%"></i></div>
-        <div class="lk"><div class="blur"><div class="r"><span>Concentrado disponible</span><span>820 kg</span></div><div class="r"><span>Ingreso del mes</span><span>₡1,240,000</span></div></div><em><span>🔒 Finanzas e inventario en la demo</span></em></div>
-      </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
-      <div class="txt"><h3>ERP Granja Caprina</h3><p>Control de una lechería de cabras, de la monta al queso.</p>
-        <div class="pain"><b>El problema</b>Se olvidan celos, partos y secados, y una mastitis se nota tarde.</div>
-        <ul><li>Alertas de celo, parto y secado</li><li>Producción diaria por cabra</li><li>Retiro de leche tras cada medicamento</li><li>Inventario, lácteos y finanzas en colones</li></ul></div>
-    </article>
-    <article class="p">
-      <div class="mock"><div class="top"><i></i><i></i><i></i><span>Control de Finca · Animales</span></div><div class="bd">
-        <div class="r"><b>Arete 0231</b><span>Hembra · Brahman · 3 años 2 meses</span></div>
-        <div class="r"><b>Arete 0198</b><span>Hembra · Jersey · 4 años 6 meses</span></div>
-        <div class="r"><b>Arete 0305</b><span>Macho · Brahman · 8 meses</span></div>
-        <div class="lk"><div class="blur"><div class="r"><span>Madre: 0198 · Padre: 0042</span><span>Parto normal</span></div><div class="r"><span>Crías vivas este año</span><span>12</span></div></div><em><span>🔒 Genealogía y partos en la demo</span></em></div>
-      </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
-      <div class="txt"><h3>Control de Finca</h3><p>Registro del ganado, con historial de cada animal.</p>
-        <div class="pain"><b>El problema</b>El historial de cada animal vive en la memoria o en libretas.</div>
-        <ul><li>Ficha por animal con madre, padre y edad</li><li>Partos y crías registrados</li><li>Búsqueda por arete, nombre o raza y exportación a Excel</li></ul></div>
-    </article>
-  </div>
+  <span class="eye">Proyectos reales</span>
+  <h2 class="rv">Mira cómo se ven por dentro</h2>
+  <p class="lead rv">Vistas parciales de sistemas que ya funcionan, con datos de ejemplo. Lo esencial lo ves aquí y el resto en una demo.</p>
+
+  <article class="pj rv">
+    <div class="mock"><div class="top"><i></i><i></i><i></i><span>Minici Store · Caja</span></div><div class="bd">
+      <div class="r"><span>Cable USB tipo C × 2</span><span>₡10,000</span></div>
+      <div class="r"><span>Cargador rápido × 1</span><span>₡10,000</span></div>
+      <div class="r"><span>Audífonos Bluetooth × 1</span><span>₡15,000</span></div>
+      <div class="r t"><span>Total</span><span>₡35,000</span></div>
+      <div class="al">Recibo listo para enviar por WhatsApp</div>
+      <div class="lk"><div class="blur"><div class="r"><span>Ventas de hoy</span><span>₡184,500</span></div><div class="r"><span>Abonos recibidos</span><span>₡42,000</span></div><div class="r"><span>Productos por agotarse</span><span>7</span></div></div><em><span>🔒 Reportes y cierre de caja en la demo</span></em></div>
+    </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
+    <div><div class="n">01</div><h3>Minici Store</h3><p>Punto de venta con inventario, clientes, abonos y apartados.</p>
+      <div class="pn"><b>El problema</b>Cuentas en cuaderno, la caja no cuadra y las filas se hacen largas.</div>
+      <ul><li>Comprobantes en imagen y tiquete para impresora de rollo</li><li>Lector de códigos de barras</li><li>Reportes a Excel con un clic y respaldos en la nube</li></ul></div>
+  </article>
+
+  <article class="pj rv">
+    <div class="mock"><div class="top"><i></i><i></i><i></i><span>Granja Caprina · Resumen</span></div><div class="bd">
+      <div class="kp"><div><b>42</b><small>En lactancia</small></div><div><b>61 L</b><small>Leche hoy</small></div><div><b>3</b><small>Alertas</small></div></div>
+      <svg viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 52 L45 46 L90 50 L135 34 L180 38 L225 22 L300 12 L300 70 L0 70Z" fill="var(--green)" opacity=".15"/><path d="M0 52 L45 46 L90 50 L135 34 L180 38 L225 22 L300 12" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="al">Cabra 014: parto probable en 6 días</div>
+      <div class="al">Cabra 027: producción cayó 24 %, revisar mastitis</div>
+      <div class="lk"><div class="blur"><div class="r"><span>Concentrado disponible</span><span>820 kg</span></div><div class="r"><span>Ingreso del mes</span><span>₡1,240,000</span></div></div><em><span>🔒 Finanzas e inventario en la demo</span></em></div>
+    </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
+    <div><div class="n">02</div><h3>ERP Granja Caprina</h3><p>Control de una lechería de cabras, de la monta al queso.</p>
+      <div class="pn"><b>El problema</b>Se olvidan celos, partos y secados, y una mastitis se nota tarde.</div>
+      <ul><li>Alertas de celo, parto y secado</li><li>Producción diaria por cabra</li><li>Retiro de leche tras cada medicamento</li><li>Inventario, lácteos y finanzas en colones</li></ul></div>
+  </article>
+
+  <article class="pj rv">
+    <div class="mock"><div class="top"><i></i><i></i><i></i><span>Control de Finca · Animales</span></div><div class="bd">
+      <div class="r"><b>Arete 0231</b><span>Hembra · Brahman · 3 años 2 meses</span></div>
+      <div class="r"><b>Arete 0198</b><span>Hembra · Jersey · 4 años 6 meses</span></div>
+      <div class="r"><b>Arete 0305</b><span>Macho · Brahman · 8 meses</span></div>
+      <div class="lk"><div class="blur"><div class="r"><span>Madre: 0198 · Padre: 0042</span><span>Parto normal</span></div><div class="r"><span>Crías vivas este año</span><span>12</span></div></div><em><span>🔒 Genealogía y partos en la demo</span></em></div>
+    </div><p class="fn">Vista parcial con datos de ejemplo. Los datos reales de cada cliente son privados.</p></div>
+    <div><div class="n">03</div><h3>Control de Finca</h3><p>Registro del ganado, con historial de cada animal.</p>
+      <div class="pn"><b>El problema</b>El historial de cada animal vive en la memoria o en libretas.</div>
+      <ul><li>Ficha por animal con madre, padre y edad</li><li>Partos y crías registrados</li><li>Búsqueda por arete, nombre o raza y exportación a Excel</li></ul></div>
+  </article>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Así trabajamos</h2>
+<section style="background:var(--bg2)"><div class="wrap">
+  <span class="eye">Cómo trabajamos</span>
+  <h2 class="rv">De la idea al sistema en una semana</h2>
   <div class="steps">
-    <div><h3>Demo</h3><p>Nos cuentas qué necesitas y te mostramos un sistema funcionando. Sin compromiso.</p></div>
-    <div><h3>Adaptación</h3><p>Partimos de código ya probado y lo personalizamos con tu logo, colores y precios.</p></div>
-    <div><h3>Entrega</h3><p>Lo dejamos en la nube, listo para usar desde el celular o la computadora. Entrega en 3 a 7 días hábiles.</p></div>
+    <div class="st rv" data-n="1"><h3>Demo</h3><p>Nos cuentas qué necesitas y te mostramos un sistema funcionando. Sin compromiso.</p></div>
+    <div class="st rv" data-n="2"><h3>Adaptación</h3><p>Partimos de código ya probado y lo personalizamos con tu logo, colores y precios.</p></div>
+    <div class="st rv" data-n="3"><h3>Entrega</h3><p>Lo dejamos en la nube, listo para usar desde el celular o la computadora.</p></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Precios claros, pago único</h2>
+<section id="precios"><div class="wrap">
+  <span class="eye">Precios</span>
+  <h2 class="rv">Claros y de pago único</h2>
   <div class="prices">
-    <div class="price"><h3>Página corporativa</h3><div class="n">₡90,000</div><p>Tu negocio en línea, con botón directo a WhatsApp.</p></div>
-    <div class="price"><h3>Tienda en línea</h3><div class="n">₡180,000</div><p>Catálogo con carrito. Los pedidos te llegan ordenados por WhatsApp.</p></div>
-    <div class="price"><h3>Control de finca</h3><div class="n">₡250,000</div><p>Registro de animales, partos y crías, con reportes en Excel.</p></div>
-    <div class="price"><h3>Sistema básico</h3><div class="n">₡200,000</div><p>Punto de venta con inventario, clientes y recibos por WhatsApp. Sin apartados ni lector de códigos.</p></div>
-    <div class="price main"><h3>Sistema completo</h3><div class="n">desde ₡400,000</div><p>Punto de venta o ERP de granja, con alertas, reportes y capacitación.</p></div>
+    <div class="pr rv"><h3>Página corporativa</h3><div class="v">₡90,000</div><p>Tu negocio en línea, con botón directo a WhatsApp.</p></div>
+    <div class="pr rv"><h3>Tienda en línea</h3><div class="v">₡180,000</div><p>Catálogo con carrito. Los pedidos te llegan ordenados por WhatsApp.</p></div>
+    <div class="pr rv"><h3>Control de finca</h3><div class="v">₡250,000</div><p>Registro de animales, partos y crías, con reportes en Excel.</p></div>
+    <div class="pr rv"><h3>Sistema básico</h3><div class="v">₡200,000</div><p>Punto de venta con inventario, clientes y recibos por WhatsApp. Sin apartados ni lector de códigos.</p></div>
+    <div class="pr f rv"><h3>Sistema completo</h3><div class="v">desde ₡400,000</div><p>Punto de venta o ERP de granja, con alertas, reportes y capacitación.</p></div>
   </div>
   <p class="note"><b>Formas de pago.</b> Puedes pagar en dos partes, 50 % al empezar y 50 % al recibir el sistema. También hay un plan con entrada baja: ₡150,000 al empezar y ₡25,000 al mes, que incluye hosting, respaldos y soporte.</p>
-  <p class="note">Cada módulo extra cuesta desde ₡15,000. El hosting, los respaldos y el soporte mensual son opcionales: ₡15,000 al mes. El pago se coordina por transferencia o SINPE Móvil.</p>
+  <p class="note">Cada módulo extra cuesta desde ₡15,000. El hosting, los respaldos y el soporte mensual son opcionales: ₡15,000 al mes. Pagas por transferencia o SINPE Móvil.</p>
+
+  <div class="quote rv" id="cotizador">
+    <div class="qf">
+      <h3 style="font-size:1.8rem;margin-bottom:1.2rem">Calcula tu inversión</h3>
+      <label for="qs">Servicio</label>
+      <select id="qs"><option value="90000">Página corporativa</option><option value="180000">Tienda en línea</option><option value="250000">Control de finca</option><option value="200000">Sistema básico (punto de venta)</option><option value="400000" selected>Sistema completo (punto de venta o ERP de granja)</option></select>
+      <label for="qm">Módulos extra: <output id="qmo">0</output></label>
+      <input id="qm" type="range" min="0" max="10" value="0">
+      <label class="chk"><input id="qh" type="checkbox" checked> Incluir hosting, respaldos y soporte</label>
+    </div>
+    <div class="qr">
+      <small>Precio estimado desde, pago único</small>
+      <div class="qn g" id="qt">₡400,000</div>
+      <p id="qx" style="margin:0">+ ₡15,000 al mes</p>
+      <a class="btn am" id="qa" href="#" target="_blank" rel="noopener">Enviar cotización por WhatsApp</a>
+      <small>Lo confirmamos contigo en la demo.</small>
+    </div>
+  </div>
+</div></section>
+
+<section id="faq" style="background:var(--bg2)"><div class="wrap">
+  <span class="eye">Preguntas frecuentes</span>
+  <h2 class="rv">Lo que casi todos preguntan</h2>
+  <div class="faq">
+    <details><summary>¿Tengo que pagar una mensualidad?</summary><p>No. El desarrollo se paga una sola vez. La mensualidad de ₡15,000 es opcional y cubre el hosting en la nube, los respaldos y el soporte.</p></details>
+    <details><summary>¿Funciona en celular y en computadora?</summary><p>Sí. Son sistemas web: los abres desde cualquier teléfono, tablet o computadora con internet.</p></details>
+    <details><summary>¿Cuánto tarda la entrega?</summary><p>Entre 3 y 7 días hábiles, según lo que necesites.</p></details>
+    <details><summary>¿Puedo ver el sistema antes de decidir?</summary><p>Sí. Te mostramos una demo funcionando, sin compromiso.</p></details>
+    <details><summary>¿Cómo se paga?</summary><p>Por transferencia o SINPE Móvil. Puedes pagar en dos partes o elegir el plan con entrada baja.</p></details>
+  </div>
 </div></section>
 
 <section id="contacto"><div class="wrap">
-  <div class="close">
-    <h2>Cuéntanos qué necesita tu negocio</h2>
-    <p>Escríbenos por WhatsApp y te respondemos con una demo y una cotización.</p>
-    <a class="btn" href="#" data-wa="Hola, vengo de su sitio web y quiero más información.">Escribir por WhatsApp</a>
-  </div>
+  <div class="close rv"><h2>Cuéntanos qué necesita tu negocio</h2><p>Escríbenos por WhatsApp y te respondemos con una demo y una cotización.</p>
+  <a class="btn am" href="#" data-wa="Hola, vengo de su sitio web y quiero más información.">Escribir por WhatsApp</a></div>
   <footer>© LogicWeb Studio · Costa Rica</footer>
 </div></section>
 
@@ -197,13 +261,16 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
 
 <script>
 var WA="50686084702";
-document.querySelectorAll("[data-wa]").forEach(function(a){
-  a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(a.dataset.wa);
-  a.target="_blank";a.rel="noopener";
-});
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener"});
 var p=document.getElementById("prod"),q=document.getElementById("qty"),t=document.getElementById("tot");
 function calc(){var n=Math.min(10,Math.max(1,parseInt(q.value)||1));t.textContent="₡"+(n*parseInt(p.value)).toLocaleString("en-US")}
 p.addEventListener("change",calc);q.addEventListener("input",calc);
+function cot(){var s=document.getElementById("qs"),n=+document.getElementById("qm").value,h=document.getElementById("qh").checked,tot=+s.value+n*15000,f="₡"+tot.toLocaleString("en-US"),mes=h?"+ ₡15,000 al mes":"Sin mensualidad";
+document.getElementById("qmo").textContent=n;document.getElementById("qt").textContent=f;document.getElementById("qx").textContent=mes;
+document.getElementById("qa").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hola, cotizé en su web: "+s.options[s.selectedIndex].text+" con "+n+" módulos extra. Total estimado desde "+f+" ("+mes+"). Me interesa avanzar.")}
+["qs","qm","qh"].forEach(function(i){document.getElementById(i).addEventListener("input",cot)});cot();
+var els=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add("in")})}
 </script>
 </body>
 </html>
